@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Re-Test</h1>
+
+  {% if articletest_list %}
+  <ul>
+
+    {% for duetest in articletest_list %}
+    <li class="{% if duetest.is_overdue %}text-danger{% endif %}">
+      <a href="{% url 'article-detail' duetest.article.pk %}">
+        {{duetest.article.title }}</a> ({{ duetest.due_test }})
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% else %}
+    <p>There are no article to re-test.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Local Library Home</h1>
+  <p>Welcome to FirstClass</p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Articles:</strong> {{ num_articles }}</li>
+    <li><strong>Schools:</strong> {{ num_schools }}</li>
+    
+  </ul>
+
+  <p>
+    You have visited this page {{num_visits}} time{{num_visits|pluralize}}.
+  </p>
+{% endblock %}
